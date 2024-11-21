@@ -12,7 +12,7 @@ TOKEN = os.getenv("DISCORD_TOKEN")
 intents = discord.Intents.default()
 intents.message_content = True
 
-bot = commands.Bot(command_prefix='-', intents=intents)
+bot = commands.Bot(command_prefix='/', intents=intents)
 
 @bot.event
 async def on_ready():
@@ -23,7 +23,7 @@ async def on_ready():
 @bot.tree.command(name="ping", description="Check the bot's latency")
 async def ping_slash_command(interaction: discord.Interaction):
     latency = round(bot.latency * 1000)
-    await interaction.response.send_message(f"Pong! Latency: {latency}ms")
+    await interaction.response.send_message(f"Pong! {latency}ms")
 
 async def load_cogs():
     await bot.load_extension("cogs.auto_responses")
