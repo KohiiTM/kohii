@@ -27,7 +27,10 @@ async def ping_slash_command(interaction: discord.Interaction):
 
 async def load_cogs():
     await bot.load_extension("cogs.auto_responses")
-    print("Cogs loaded")
+      
+# Load the Pomodoro Cog
+async def load_cogs():
+    await bot.load_extension("cogs.pomodoro")
 
 async def main():
     async with bot:
